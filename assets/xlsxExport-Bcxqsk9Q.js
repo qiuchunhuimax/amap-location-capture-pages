@@ -4,7 +4,7 @@ var e=Uint8Array,t=Uint16Array,n=Int32Array,r=new e([0,0,0,0,0,0,0,0,1,1,1,1,2,2
   <cols>${e.widths.map((e,t)=>`<col min="${t+1}" max="${t+1}" width="${e}" customWidth="1"/>`).join(``)}</cols>
   <sheetData>${t}</sheetData>
   <autoFilter ref="A1:${q(e.filterColumns)}${Math.max(1,e.rows.length)}"/>
-</worksheet>`}function Y(e){let t={widths:[18,12,38,16],filterColumns:4,rows:[[`设施分类`,`数量`,`最近设施`,`最近距离(米)`],...e.categories.map(e=>[e.categoryName,e.total,e.nearestPois[0]?.name??``,e.nearestPois[0]?.distanceMeters??``])]},n={widths:[16,38,48,16,16,14,16],filterColumns:7,rows:[[`设施分类`,`名称`,`地址`,`经度`,`纬度`,`距离(米)`,`高德类型编码`],...e.categories.flatMap(e=>e.pois.map(t=>[e.categoryName,t.name,t.address,t.longitude,t.latitude,t.distanceMeters,t.poiType??``]))]},r=G({"[Content_Types].xml":V(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+</worksheet>`}function Y(e){let t={widths:[18,12,38,16],filterColumns:4,rows:[[`设施分类`,`数量`,`最近设施`,`最近距离(米)`],...e.categories.map(e=>[e.categoryName,e.total,e.nearestPois[0]?.name??``,e.nearestPois[0]?.distanceMeters??``])]},n={widths:[16,18,38,48,16,16,14,16],filterColumns:8,rows:[[`一级分类`,`二级分类`,`名称`,`地址`,`经度`,`纬度`,`距离(米)`,`高德类型编码`],...e.categories.flatMap(e=>e.pois.map(t=>[e.categoryName,t.subcategoryName,t.name,t.address,t.longitude,t.latitude,t.distanceMeters,t.poiType??``]))]},r=G({"[Content_Types].xml":V(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="xml" ContentType="application/xml"/>
